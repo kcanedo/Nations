@@ -466,6 +466,15 @@ class ViewController: UIViewController {
     
     @IBAction func btnPlayAgain(_ sender: Any) {
         
+        play()
+        
+    }
+    
+    func play() {
+        
+        // This function enable buttons, random country and wait player make a choice
+        // Last change: 2018-jun-27
+        
         btnLabel1.isEnabled = true
         btnLabel2.isEnabled = true
         btnLabel3.isEnabled = true
