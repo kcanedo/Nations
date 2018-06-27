@@ -421,28 +421,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        randomCountry = Int(arc4random_uniform(197))
-        randomButton  = Int(arc4random_uniform(3))
-        
-        lblCountry.text = country[randomCountry]
-        
-        if randomButton == 0 {
-            btnLabel1.setTitle(capital[randomCountry], for: .normal)
-            btnLabel2.setTitle(capital[Int(arc4random_uniform(197))], for: .normal)
-            btnLabel3.setTitle(capital[Int(arc4random_uniform(197))], for: .normal)
-        }
-        
-        if randomButton == 1 {
-            btnLabel1.setTitle(capital[Int(arc4random_uniform(197))], for: .normal)
-            btnLabel2.setTitle(capital[randomCountry], for: .normal)
-            btnLabel3.setTitle(capital[Int(arc4random_uniform(197))], for: .normal)
-        }
-        
-        if randomButton == 2 {
-            btnLabel1.setTitle(capital[Int(arc4random_uniform(197))], for: .normal)
-            btnLabel2.setTitle(capital[Int(arc4random_uniform(197))], for: .normal)
-            btnLabel3.setTitle(capital[randomCountry], for: .normal)
-        }
+        play()
         
     }
 
@@ -453,9 +432,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func btn01(_ sender: Any) {
-        btnLabel1.isEnabled = false
-        btnLabel2.isEnabled = false
-        btnLabel3.isEnabled = false
+        disableButtons()
         if randomButton == 0 {
             lblResult.text = "Certo!"
             lblResult.textColor = UIColor.blue
@@ -466,9 +443,7 @@ class ViewController: UIViewController {
     }
         
     @IBAction func btn02(_ sender: Any) {
-        btnLabel1.isEnabled = false
-        btnLabel2.isEnabled = false
-        btnLabel3.isEnabled = false
+        disableButtons()
         if randomButton == 1 {
             lblResult.text = "Certo!"
             lblResult.textColor = UIColor.blue
@@ -479,9 +454,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btn03(_ sender: Any) {
-        btnLabel1.isEnabled = false
-        btnLabel2.isEnabled = false
-        btnLabel3.isEnabled = false
+        disableButtons()
         if randomButton == 2 {
             lblResult.text = "Certo!"
             lblResult.textColor = UIColor.blue
@@ -523,6 +496,11 @@ class ViewController: UIViewController {
         
     }
     
+    func disableButtons() {
+        btnLabel1.isEnabled = false
+        btnLabel2.isEnabled = false
+        btnLabel3.isEnabled = false
+    }
     
 }
 
